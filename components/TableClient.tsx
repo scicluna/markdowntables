@@ -16,11 +16,15 @@ type Encounter= {
 
 export default function TableClient({tables}: TableClientProps) {
     const [table, setTable] = useState('')
-    const [encounter, setEncounter] = useState<Encounter>()
+    const [encounter, setEncounter] = useState<Encounter | null>()
     const tableIndex = tables.findIndex((t) => t.fileName === table) ?? -1
 
     function newTable(table: string) {
         setTable(table)
+    }
+
+    function clearEncounter(){
+        setEncounter(null)
     }
 
     function rollTable(){
@@ -31,7 +35,8 @@ export default function TableClient({tables}: TableClientProps) {
 
     return (
         <section className="flex flex-col items-center gap-2 p-4 font-mono">
-            <ComboBox tables={tables} newTable={newTable}/>
+            <ComboBox tables={tables} newTable={newTable} clearEncounter={clearEncounter}/>
+            <div className="flex flex-col gap-5 p-4">
             {tableIndex !== -1 && (
                 tables[tableIndex].encounters.map((encounter) => (
                     <p className="text-2xl" key={encounter.name}>
@@ -39,9 +44,10 @@ export default function TableClient({tables}: TableClientProps) {
                     </p>
                 ))
             )}
+            </div>
             <Button onClick={rollTable} className="dark:bg-slate-950 dark:text-slate-100 dark:hover:bg-slate-800">Roll</Button>
             {encounter && (
-                <p className="text-2xl">
+                <p className="text-2xl mt-4">
                     {encounter.roll} --- {encounter.description}
                 </p>
             )}

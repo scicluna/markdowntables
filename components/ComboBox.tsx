@@ -22,9 +22,10 @@ import {
 type ComboBoxProps = {
     tables: Table[] | null
     newTable: (table: string) => void
+    clearEncounter: () => void
 }
 
-export function ComboBox({tables, newTable}:ComboBoxProps) {
+export function ComboBox({tables, newTable, clearEncounter}:ComboBoxProps) {
   const [open, setOpen] = React.useState(false)
   const [value, setValue] = React.useState("")
 
@@ -58,6 +59,7 @@ export function ComboBox({tables, newTable}:ComboBoxProps) {
                   setValue(currentValue === value ? "" : currentValue)
                   setOpen(false)
                   newTable(currentValue)
+                  clearEncounter()
                 }}
               >
                 <Check
