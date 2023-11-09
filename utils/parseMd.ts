@@ -1,13 +1,12 @@
 import fs from 'fs/promises'
 
 export async function parseMd(filePath: string){
-    if (!filePath.endsWith('.md')) return null
 
     const fileContent = await fs.readFile(filePath, 'utf-8')
     const fileName = filePath.split('/').pop()?.split('.')[0] ?? filePath.split('.')[0]
-    const lines = fileContent.split('\n')    
+    const lines = fileContent.split('\n').filter(line => line !== '')   
 
-    //Each line should read like this: 
+    //Each line should read like this: c
     //1. Name of Encounter - Encounter Description
 
     /*Structure of Table:
@@ -20,11 +19,16 @@ export async function parseMd(filePath: string){
     }
     */
 
-    const table: {[key: string]:{name: string, description: string}} = {}
+    const encounters: {name:string, description:string}[] = []
     lines.forEach(line => {
         const [name, description] = line.split(' - ')
-        table[fileName] = {name: name, description: description}
+        encounters.push({name, description})
     })
+
+    const table = {
+        fileName: fileName,
+        encounters: encounters
+    }
 
     return table
 }

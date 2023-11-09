@@ -1,16 +1,16 @@
-import fs from 'fs/promises'
-import { parseMd } from './parseMd'
+import fs from 'fs/promises';
+import { parseMd } from './parseMd';
 
-export async function parseDirectory(directoryPath: string){
-    const files = await fs.readdir(directoryPath)
-    const tables: {[key: string]:{name: string, description: string}}[] = []
-    
-    files.forEach(async (file) => {
-        const fileContent = await parseMd(file)
-        if (fileContent){
-            tables.push(fileContent)
-        }
-    })
+export async function parseDirectory(directoryPath: string) {
+    const files = await fs.readdir(directoryPath);
+    const filteredFiles = files.filter((file) => file.endsWith('.md'));
+    const promises = filteredFiles.map(async (file) => {
+        const fileContent = await parseMd(`./vault/${file}`);
+        return fileContent;
+    });
 
-    return tables
-}       
+    const results = await Promise.all(promises);
+    const tables = results.filter((content) => content !== null);
+
+    return tables;
+}

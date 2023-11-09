@@ -1,0 +1,1 @@
+export type Table = { fileName: string, encounters: { name: string; description: string }[]}
