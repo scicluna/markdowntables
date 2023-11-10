@@ -40,7 +40,7 @@ export default function TableClient({tables}: TableClientProps) {
             {tableIndex !== -1 && (
                 tables[tableIndex].encounters.map((encounter) => (
                     <p className="text-2xl" key={encounter.name}>
-                        {encounter.name}
+                        {encounter.name.replaceAll("**", "")}
                     </p>
                 ))
             )}

@@ -1,0 +1,10 @@
+1. **Demon Duel Challenge** - While walking through the district, a renowned demon duelist mistakes one of the players for a rival and publicly challenges them to a duel, drawing a crowd. He is none other than [[Vorgoth, The Flame-Eyed]], a fierce flame demon with a vendetta.
+2. **The Shattered Seal** - The players stumble upon a broken magical seal in an alley, releasing a spirit that offers them knowledge of a secret faction meeting in exchange for its freedom. The spirit is called [[Ethrion, the Whispering Shade]], once an important advisor to the Iron Scale.
+3. **Escape the Cabal's Shadow** - After witnessing a Shadow Cabal ritual, the players are hunted by its members, forcing them to navigate the district's dangerous streets while being pursued.
+4. **Iron Scale Recruitment** - Members of the Iron Scale approach the players, mistaking them for mercenary fighters, and attempt to recruit them for a high-stakes raid against a Free Souls Coalition safe house. More Details > [[Iron Scale Recruitment]]
+5. **The Velvet Ash Intruder** - During a social event at Velvet Ash Manor, the players catch a thief trying to steal a powerful demonic artifact and must decide whether to stop them or help them. [[The Velvet Heist]]
+6. **The Enigmatic Elixir** - In the market, a mysterious vendor offers the players a potion that promises to grant them temporary demonic powers, but its effects could be unpredictable and draw unwanted attention. [[The Enigmatic Elixer]]
+7. **Alley Ambush** - The players are ambushed by low-ranking demons who mistake them for someone else; dealing with them could reveal why they were targeted.
+8. **Lost and Found** - A lost imp approaches the players, offering a reward if they return it to its master—a figure from one of the factions.
+9. **Impromptu Sermon** - A street preacher speaks of the end times, directly implicating one of the players as a sign of the coming change.
+10. **Runaway Cart** - A cart full of alchemical ingredients loses its handler and barrels towards a crowd; can the players stop it in time?
